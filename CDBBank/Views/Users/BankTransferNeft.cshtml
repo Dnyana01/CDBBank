@@ -1,0 +1,62 @@
+﻿@model CDBBank.Models.NeftRecords
+
+@{
+    ViewData["Title"] = "BankTransferNeft";
+    Layout = "~/Views/Shared/_LayoutDashBoard.cshtml";
+}
+
+<h1>BankTransferNeft</h1>
+
+@{
+    @if (ViewBag.message != null)
+    {
+        <h3>@ViewBag.message</h3>
+    }
+
+
+    else
+    {
+        <div class="row">
+            <div class="col-md-4">
+                <form asp-action="BankTransferNeft">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="form-group">
+                        <label asp-for="AccountNo" class="control-label">Account Number</label>
+                        <input asp-for="AccountNo" class="form-control" />
+                        <span asp-validation-for="AccountNo" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="ConfirmAccountNo" class="control-label">Confirm Account Number</label>
+                        <input asp-for="ConfirmAccountNo" class="form-control" />
+                        <span asp-validation-for="ConfirmAccountNo" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="BeneficiaryName" class="control-label">Recipient Name</label>
+                        <input asp-for="BeneficiaryName" class="form-control" />
+                        <span asp-validation-for="BeneficiaryName" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Amount" class="control-label">Enter Amount</label>
+                        <input asp-for="Amount" class="form-control" />
+                        <span asp-validation-for="Amount" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Remarks" class="control-label">Remarks</label>
+                        <input asp-for="Remarks" class="form-control" />
+                        <span asp-validation-for="Remarks" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" value="Send" class="btn btn-primary" />
+                    </div>
+                </form>
+            </div>
+        </div>
+
+
+    }
+}
+
+
+
+
+

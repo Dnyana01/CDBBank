@@ -1,0 +1,97 @@
+﻿@model CDBBank.Models.RD
+
+@{
+    ViewData["Title"] = "RD";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<@{
+    ViewData["Title"] = "RD";
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Recurring Depositr</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <!--Google Icons-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="~/css/HomePagestyles.css" />
+
+    <style>
+        .jumbotron {
+            background-color: #e0b0ff; /*Mauve*/
+            color: #ffffff;
+        }
+        .bg-grey {
+            background-color: #f6f6f6;
+        }
+        .container-fluid {
+            padding: 60px 50px;
+        }
+        .carousel-control.right, .carousel-control.left {
+            background-image: none;
+            color: #e0b0ff;
+        }
+        .carousel-indicators li {
+            border-color: #e0b0ff;
+        }
+            .carousel-indicators li.active {
+                background-color: #e0b0ff;
+            }
+        .item h4 {
+            font-size: 19px;
+            line-height: 1.375em;
+            font-weight: 400;
+            font-style: italic;
+            margin: 70px 0;
+        }
+        .item span {
+            font-style: normal;
+        }
+    </style>
+
+    <meta name="viewport" content="width=device-width" />
+    <script type="text/javascript" src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+
+</head>
+<body>
+    <div class="jumbotron text-center">
+        <h2>Recurring Deposit Calculator </h2>
+        <p class="">This RD Calculator helps you calculate the maturity amount and interest earned for any <em>Recurring Deposit</em> account.</p>
+    </div>
+        <hr />
+        <div class="row">
+            <div class="col-md-12">
+                <form asp-action="RD">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label asp-for="RdInvMon" class="control-label"></label>
+                                <input asp-for="RdInvMon" class="form-control" />
+                                <span asp-validation-for="RdInvMon" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label asp-for="Time" class="control-label"></label>
+                                <input asp-for="Time" class="form-control" />
+                                <span asp-validation-for="Time" class="text-danger"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" value="Calculate" class="btn btn-outline-info btn-primary btn-lg" />
+                    </div>
+                </form>
+            </div>
+        </div>
+</body>
+</html>
+    @section Scripts {
+        @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    }

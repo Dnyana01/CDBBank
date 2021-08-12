@@ -1,0 +1,47 @@
+﻿@{
+
+    Layout = "~/Views/Shared/_LayoutDashBoard.cshtml";
+}
+
+<h1>MobileRecharge</h1>
+
+@{
+    if (ViewBag.recharge != null)
+    {
+        <h3>@ViewBag.recharge</h3>
+    }
+
+    else
+    {
+
+        <div class="row">
+            <div class="col-md-4">
+                <form asp-action="MobileRecharge">
+                    <label class="control-label">Mobile No</label>
+                    <input class="form-control" type="number" name="mobile" minlength="10" maxlength="10" />
+
+                    <label class="control-label" for="operators">Choose your Operator:</label><br />
+                    <select class="form-control" id="operators">
+                        <option selected>Select Operators</option>
+                        <option>Vodafone</option>
+                        <option>Airtel</option>
+                        <option>BSNL</option>
+                        <option>Jio</option>
+                    </select>
+
+                    <label class="control-label">Enter Amount</label>
+                    <input class="form-control" type="number" name="amount" />
+
+                    <input class="btn btn-primary" type="submit" value="Recharge" />
+
+                </form>
+            </div>
+        </div>
+    }
+
+}
+
+<div>
+    <a asp-action="Dashboard">Back to Dashboard</a>
+</div>
+

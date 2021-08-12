@@ -1,0 +1,44 @@
+﻿@model CDBBank.Models.BankUser
+
+@{
+    ViewData["Title"] = "Accounts";
+    Layout = "~/Views/Shared/_LayoutDashBoard.cshtml";
+}
+
+<h1>Accounts</h1>
+
+
+    <div class="card" style="width: 25rem;">
+
+        <div class="card-body">
+            @{ 
+                int bal = Convert.ToInt32(Model.Balance);
+            }
+
+            <h4 class="card-title">Balance: @bal₹</h4>
+            <h5 class="card-subtitle mb-2 text-muted">
+                @Html.DisplayFor(model => model.AccountNum)
+            </h5>
+            <h6 class="card-subtitle mb-2 text-muted">
+                @Html.DisplayFor(model => model.AccountType) Account
+            </h6>
+
+            <a href="~/Users/TransactionIndex" class="card-link btn btn-success">See Transactions</a>
+        </div>
+    </div>
+
+
+    @*<div class="card">
+        <div class="card-header">
+            Featured
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">Special title treatment</h5>
+            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+    </div>*@
+
+
+  
+

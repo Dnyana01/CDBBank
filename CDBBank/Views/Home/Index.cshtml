@@ -1,0 +1,300 @@
+﻿@{ ViewData["Title"] = "Home Page";
+                Layout = "~/Views/Shared/_Layout.cshtml"; }
+
+
+<!--banner Section-->
+<section id="banner" style="height:400px;">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <p class="promo-title">Your Bank, Your way of life.</p>
+                <p>We know your finance better than you...Come be a part of us !</p>
+                @*<a href="#" class="play-btn"><i class="fa fa-play-circle" aria-hidden="true"></i>Watch Video</a>*@
+            </div>
+            <div class="col-md-6">
+                <!--if you have a good image put it here-->
+            </div>
+        </div>
+    </div>
+</section>
+<!------Independence day offers-------->
+<div id="demo" class="carousel slide" data-ride="carousel">
+    <ul class="carousel-indicators">
+        <li data-target="#demo" data-slide-to="0" class="active"></li>
+        <li data-target="#demo" data-slide-to="1"></li>
+        <li data-target="#demo" data-slide-to="2"></li>
+    </ul>
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="~/images/indday.PNG" style="width:1100px; height:200px; background-color:orange; color:black;">
+            <div class="carousel-caption">
+                @*<h3>80% OFF</h3>
+                <p>Right to Fashion Sale (7th to 12th Aug) - Flat 50% to 80% OFF + Extra 10% OFF for CDB Users!</p>*@
+            </div>
+           
+        </div>
+        <div class="carousel-item">
+            <div class="container" style="width:1100px; height:200px; background-color:orange;">
+                <div class="carousel-caption">
+                    <h2>Independence Day Offer!!!</h2>
+                    <h3>80% OFF : MYNTRA</h3>
+                    <p>Right to Fashion Sale (7th to 12th Aug) - Flat 50% to 80% OFF + Extra 10% OFF for CDB Users!</p>
+                </div>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <div class="container" style="width:1100px; height:200px; background-color:darkgreen; ">
+                <div class="carousel-caption">
+                    <h3>40% OFF :  OVEN STORY</h3>
+                    <p>
+                        Get flat 40% off up to Rs 80 with this Independence Day Offer.
+                        !
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <a class="carousel-control-prev" href="#demo" data-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+    </a>
+    <a class="carousel-control-next" href="#demo" data-slide="next">
+        <span class="carousel-control-next-icon"></span>
+    </a>
+</div>
+
+<!--Services Section-->
+<section id="services">
+    <div class="container text-center">
+        <h1 class="title">Our Services</h1>
+        <div class="row text-center">
+            <div class="col-md-4 services">
+
+                <img src="~/images/Pay.PNG" class="service-img" />
+                <h4>Pay</h4>
+                <p>Type whatever you like about Pay</p>
+            </div>
+            <div class="col-md-4 services">
+
+
+                <img src="~/images/Save.PNG" class="service-img" />
+                <h4>Save</h4>
+                <p>Type whatever you like about Pay</p>
+            </div>
+            <div class="col-md-4 services">
+
+
+                <img src="~/images/Invest.PNG" class="service-img" />
+                <h4>Invest</h4>
+                <p>Type whatever you like about Pay</p>
+            </div>
+        </div>
+        <a href="/USers/Services" class="btn btn-primary">All Sevices</a>
+    </div>
+</section>
+<!--banner Section-->
+<section id="bannerSec" style="height:400px;">
+    <div class="container">
+
+        <div class="text-center">
+            <p class="promo">Don't have an Account yet?</p>
+            <h4> Open Your Account in just 2 minutes!!!</h4>
+            <p></p>
+            <a href="~/BankUsers/CreateNew" class="btn btn-info">Create An Account</a>
+            <p></p>
+            <p><a href="~/Default/IsCustomer">Already have an account? Log in</a></p>
+        </div>
+
+    </div>
+</section>
+
+<!--------------card for calculator------------------->
+<section id="ways">
+    <div class="container text-center">
+        <div class="row" style="margin-left: 10px">
+            <!--<div class="card" style="width:260px; color:white;">
+            <div class="card-body">
+                <h5 class="card-title">SIP CALCULATOR</h5>
+                <p class="card-text">Calculate maturity corpus if you invest small amounts monthly</p>-->
+            @*<a href="#" class="btn btn-primary">CALCULATE</a>*@
+            <!--</div>
+            </div>-->
+            <div class="card" style="width:260px;">
+                <div class="card-body">
+                    <h5 class="card-title">FD CALCULATOR</h5>
+                    <p class="card-text">Competitive interest rates, safety & rich features - in one FD</p>
+                    <a href="~/FDs/FD" class="btn btn-primary">CALCULATE</a>
+                </div>
+            </div>
+            <div class="card" style="width:260px;">
+                <div class="card-body">
+                    <h5 class="card-title">RD CALCULATOR</h5>
+                    <p class="card-text">you can make regular savings and earn interest, use our RD calculator</p>
+                    <a href="~/RDs/RD" class="btn btn-primary">CALCULATE</a>
+                </div>
+            </div>
+            <div class="card" style="width:260px;">
+                <div class="card-body">
+                    <h5 class="card-title">INTEREST RATES</h5>
+                    <p class="card-text">Check out our Amazing Interest Rates... </p>
+                    <p> </p>
+                    <a href="~/Home/InterestRates" class="btn btn-primary">KNOW MORE</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+<!---------------ARTICLES--------------------->
+<section id="bannerSec">
+    <div class="container text-center">
+        <h4 style="color:#86608e">----------------BLOGS----------------</h4>
+        <h1>MANAGE YOUR FINANCES BETTER</h1>
+        <div class="row">
+            <div class="card" style="width:350px">
+                <img class="card-img-top" src="~/images/FD.PNG" alt="Card image">
+                <div class="card-body">
+                    @*<h4 class="card-title">FIXED </h4>*@
+                    @*<p class="card-text">Some example text.</p>*@
+
+                    <a href="~/Home/FD" style="color:#8d4e85">Things you should know about fixed deposits...</a>
+                </div>
+            </div>
+            <div class="card" style="width:350px">
+                <img class="card-img-top" src="~/images/RD.PNG" alt="Card image">
+                <div class="card-body">
+                    @*<h4 class="card-title">FIXED </h4>*@
+                    @*<p class="card-text">Some example text.</p>*@
+
+                    <a href="~/Home/RD" style="color:#8d4e85">A Beginner’s Guide to Recurring deposits...</a>
+                </div>
+            </div>
+            <div class="card" style="width:350px">
+                <img class="card-img-top" src="~/images/SIP.PNG" alt="Card image">
+                <div class="card-body">
+                    @*<h4 class="card-title">FIXED </h4>*@
+                    @*<p class="card-text">Some example text.</p>*@
+
+                    <p style="color: white"> . </p>
+                    <a href="~/Home/SIP" style="color:#8d4e85">Invest through SIP...</a>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</section>
+
+<!-------We take your security-------->
+<section id="services">
+    <div class="container text-center">
+        <h1 class="title services">WE TAKE YOUR SECURITY</h1>
+        <h2>SERIOUSLY !</h2>
+        <div class="row" style="margin-top:50px">
+            <div class="col-md-4">
+                <h4>Peace of mind for you as we have the most advanced technology & protection</h4>
+            </div>
+            <div class="col-md-4">
+                <h4><span><i class="fa fa-shield" aria-hidden="true"></i></span>2 Factor i-safe authentication</h4>
+            </div>
+            <div class="col-md-4">
+                <h4>
+                    <span><i class="fa fa-shield" aria-hidden="true"></i></span>We make you
+                    feel special
+                </h4>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-----------offers------------->
+<section id="services" style="background-color:#ffe4e1;padding: 30px 0px;">
+    <div class="container text-center">
+        <div class="title">
+            <h1>OFFERS FOR YOU</h1>
+            <p></p>
+            <p style="color:#ffe4e1;"> . </p>
+            <h3>Get exclusive deals and discounts on thousands of brands</h3>
+            <p style="color:#ffe4e1;"> . </p>
+        </div>
+        <div class="row text-center">
+            <div class="col-md-4">
+                <div class="card text-center">
+                    <img src="~/images/bb.PNG" class="card-img-top" />
+                    <div class="card-body">
+                        <h5 class="card-title">Get Rs.150 Cashback On Big Basket</h5>
+                        <p class="card-text">Get Rs 150 cashback on grocery shopping on Bigbasket Pay using CDB Bank Internet Banking</p>
+                        <a href="~/Home/Offer1">KNOW MORE</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card text-center">
+                    <img src="~/images/swigs.PNG" class="card-img-top" />
+                    <div class="card-body">
+                        <h5 class="card-title">Get 15% Discount On Food Order On Swiggy</h5>
+                        <p class="card-text">15% discount up to INR 75/- on orders above INR 400/-</p>
+                        <a href="~/Home/Offer2">KNOW MORE</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card text-center">
+                    <img src="~/images/licious.PNG" class="card-img-top" />
+                    <div class="card-body">
+                        <p> </p>
+                        <h5 class="card-title">Get 10% Discount At Liciouset</h5>
+                        <p class="card-text">Avail 10% instant discount on a minimum purchase of Rs. 1000 using CDB bank Net banking.</p>
+                        <a href="~/Home/Offer3">KNOW MORE</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <a href="~/Users/Offers" class="btn btn-primary">All Offers</a>
+    </div>
+
+</section>
+<!--Ways To Bank Section-->
+@*<section id="ways" style="height:650px;">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <img src="#" />
+                </div>
+                <div class="col-md-6">
+                    <div class="waysto">
+                        <h4 style="color:#86608e">WAYS TO BANK---------</h4>
+                        <h2 style="color:black"><bold>STAY UPDATED</bold></h2>
+                        <h2>IN SO MANY WAYS</h2>
+                    </div>
+                    <nav class="navbar navbar-expand-lg navbar-light secondaryNav">
+                        <div class="collapse navbar-collapse" id="navbarNav">
+                            <ul class="navbar-nav">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Mobile</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Internet</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">WhatsApp</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Banks & ATM</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+                    <div class="someWriteup">
+                        <h4 style="color:#856088">Download the latest Version of iMobile Pay App</h4>
+                        <img src="~/images/Scan.PNG" style="width: 200px; height:200px" />
+                        <p style="color:#9400d3">CDB BANK ACCOUNT HOLDERS ></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>*@
+
+
+

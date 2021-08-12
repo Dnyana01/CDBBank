@@ -1,0 +1,253 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Fixed Deposit Calculator</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <!--Google Icons-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+    <style>
+        .jumbotron {
+            background-color: #e0b0ff; /*Mauve*/
+            color: #ffffff;
+        }
+
+        .bg-grey {
+            background-color: #f6f6f6;
+        }
+
+        .container-fluid {
+            padding: 60px 50px;
+        }
+
+        .carousel-control.right, .carousel-control.left {
+            background-image: none;
+            color: #e0b0ff;
+        }
+
+        .carousel-indicators li {
+            border-color: #e0b0ff;
+        }
+
+            .carousel-indicators li.active {
+                background-color: #e0b0ff;
+            }
+
+        .item h4 {
+            font-size: 19px;
+            line-height: 1.375em;
+            font-weight: 400;
+            font-style: italic;
+            margin: 70px 0;
+        }
+
+        .item span {
+            font-style: normal;
+        }
+
+        .panel {
+            border: 1px solid #e0b0ff;
+            border-radius: 0 !important;
+            transition: box-shadow 0.5s;
+        }
+
+            .panel:hover {
+                box-shadow: 5px 0px 40px rgba(0,0,0, .2);
+            }
+
+        .panel-footer .btn:hover {
+            border: 1px solid #f4511e;
+            background-color: #fff !important;
+            color: #f4511e;
+        }
+
+        .panel-heading {
+            color: #fff !important;
+            background-color: #dda0dd !important;
+            padding: 25px;
+            border-bottom: 1px solid transparent;
+            border-top-left-radius: 0px;
+            border-top-right-radius: 0px;
+            border-bottom-left-radius: 0px;
+            border-bottom-right-radius: 0px;
+        }
+    </style>
+
+    <meta name="viewport" content="width=device-width" />
+    <script type="text/javascript" src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+
+</head>
+<body>
+    <!-- Container (Portfolio Section) -->
+    <div class="container-fluid text-center bg-grey">
+        <div id="myCarousel" class="carousel slide text-center" data-ride="carousel">
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#myCarousel" data-slide-to="1"></li>
+                <li data-target="#myCarousel" data-slide-to="2"></li>
+            </ol>
+
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner" role="listbox">
+                <div class="item active">
+                    <h4>
+                        <strong>Fixed Deposit Calculator</strong>
+                        <br /> This FD Calculator helps you calculate the maturity amount and interest earned for any <em>Fixed Deposit</em> account.
+                    </h4>
+                </div>
+                <div class="item">
+                    <h4>
+                        Your FD Invest amount is Rs.@ViewBag.PrincipleAmount <br />
+                        Maturity Amount will be Rs. @ViewBag.MaturityAmount <br />
+                        After @ViewBag.time years, On @ViewBag.Date <br />
+                        Interest earn will be RS. @ViewBag.InterestAmount<br />
+                        at rate of interest @ViewBag.RateOfInterest (%)
+                    </h4>
+                </div>
+                <div class="item">
+                    <h4>
+                        <div class="row text-center">
+                            <div class="col-md-9" id="results-wrapper">
+                                <table class="table table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th>Year</th>
+                                            <th>Opening Balance (&#8377;)</th>
+                                            <th>Interest Earned (&#8377;)</th>
+                                            <th>Closing Balance (&#8377;)</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td> @ViewBag.time </td>
+                                            <td> @ViewBag.PrincipleAmount </td>
+                                            <td> @ViewBag.InterestAmount </td>
+                                            <td> @ViewBag.MaturityAmount </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </h4>
+                </div>
+            </div>
+
+            <!-- Left and right controls -->
+            <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+    </div>
+    <div>
+        <br />
+        <div id="chartContainer"></div>
+        <script type="text/javascript">
+            window.onload = function () {
+                var chart = new CanvasJS.Chart("chartContainer", {
+                    title: {
+                        text: "Fixed Deposit"
+                    },
+                    subtitles: [{
+                        text: "Calculator"
+                    }],
+                    animationEnabled: true,
+                    legend: {
+                        verticalAlign: "center",
+                        horizontalAlign: "left",
+                        fontSize: 20,
+                        fontFamily: "Helvetica"
+                    },
+                    theme: "light2",
+                    data: [
+                        {
+                            type: "pie",
+                            indexLabelFontFamily: "Garamond",
+                            indexLabelFontSize: 20,
+                            indexLabel: "{label} {y}₹",
+                            startAngle: -20,
+                            showInLegend: true,
+                            toolTipContent: "{legendText} {y}₹",
+                            dataPoints: [
+                                { y: @ViewBag.PrincipleAmount, legendText: "Principle Amount", label: "Principle Amount" },
+                                { y: @ViewBag.InterestAmount, legendText: "Interest Amount", label: "Interest Amount" }
+                            ]
+                        }
+                    ]
+                });
+                chart.render();
+            };
+        </script>
+        <canvas id="myChart" width="487" height="487" style="display: block; height: 325px; width: 325px;" class="chartjs-render-monitor">
+        </canvas>
+        <div>
+            <br />
+            <br />
+        </div>
+    </div>
+    <!-- Container (Pro and Cons Section) -->
+    <div class="container-fluid">
+        <div class="text-center">
+            <h2>Benefits and Limitations of FD</h2>
+        </div>
+        <div class="row">
+            <div class="col-sm-6 col-xs-12">
+                <div class="panel panel-default text-center">
+                    <div class="panel-heading">
+                        <h1>Pros</h1>
+                    </div>
+                    <div class="panel-body">
+                        <p><strong><i class="material-icons" style="font-size:14px;color:red;text-shadow:2px 2px 4px #000000;">check</i></strong> FD is very safe</p>
+                        <p><strong><i class="material-icons" style="font-size:14px;color:red;text-shadow:2px 2px 4px #000000;">check</i></strong> Stable and predicted returns (e.g 7% p.a)</p>
+                        <p><strong><i class="material-icons" style="font-size:14px;color:red;text-shadow:2px 2px 4px #000000;">check</i></strong>  Well suitable for conservative investors</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-xs-12">
+                <div class="panel panel-default text-center">
+                    <div class="panel-heading">
+                        <h1>Cons</h1>
+                    </div>
+                    <div class="panel-body">
+                        <p>
+                            <strong><i class="material-icons" style="font-size:14px;color:red;text-shadow:2px 2px 4px #000000;">remove</i></strong>
+                            FD has low liquidity (you'll earn less interest in case of premature withdrawal)
+                        </p>
+                        <p>
+                            <strong><i class="material-icons" style="font-size:14px;color:red;text-shadow:2px 2px 4px #000000;">remove</i></strong>
+                            Low returns, when you take inflation in account, actual returns are lower.
+                        </p>
+                        <p>
+                            <strong><i class="material-icons" style="font-size:14px;color:red;text-shadow:2px 2px 4px #000000;">remove</i></strong>
+                            Not suitable for long term wealth creation or the investors with high risk appetite
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-sm-12">
+        <div class="social-share-buttons">
+            <i class="material-icons" style="font-size:14px;color:blue;">share</i>
+            <span class="social-btn share-text"><strong>Share on</strong></span>
+            <span class="social-btn facebook-btn">
+                <i class="material-icons" style="font-size:14px;color:blue;">facebook</i>
+                <a href="http://www.facebook.com/sharer.php?u=https://fd-calculator.in" target="_blank">Facebook</a>
+            </span>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,80 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@using Microsoft.AspNetCore.Http;
+
+@{
+    if(Context.Session.GetInt32("UserId") == null)
+        Layout = "~/Views/Shared/_Layout.cshtml";
+    else
+        Layout = "~/Views/Shared/_LayoutDashBoard.cshtml";
+
+}
+
+<section class="offersMain">
+    <div class="container">
+        <div class="text-center">
+            <h1 class="title">Offers Zone</h1>
+        </div>
+    </div>
+    <div class="card-columns">
+        <div class="card bg-light">
+            <div class="card-body" style="background-color:#fdfff5;">
+                <p> </p>
+                <h5 class="card-title">Get Amazon Pay Gift Card Worth Rs.200</h5>
+                <p class="card-text">Get an Amazon Pay Gift Card worth Rs 200. Login & do your 1st transaction on iMobile Pay &; Avail the offer now.</p>
+                <p>Offer period: Till Aug 31, 2021</p>
+                <p>COUPON CODE: <mark>CPAY</mark></p>
+
+            </div>
+        </div>
+        <div class="card bg-light">
+            <div class="card-body" style="background-color:#f8f4ff;">
+                <p> </p>
+                <h5 class="card-title">Get 5% Milkbasket Cashback</h5>
+                <p class="card-text">Get 5% additional Milkbasket Cashback on wallet top-up using CDB Net-Banking. Use the code  given below & avail the offer now.</p>
+                <p>Offer period: Till Sept 30, 2021</p>
+                <p>COUPON CODE: <mark>MLKBST5</mark></p>
+            </div>
+        </div>
+        <div class="card bg-light">
+            <div class="card-body" style="background-color:#f8f4ff;">
+                <p> </p>
+                <h5 class="card-title">Get Up To 22.5% Cashback On Samsung Products</h5>
+                <p class="card-text">Get Up to 22.5% cashback on select Samsung products. Offer valid on EMI on Debit Card transactions..</p>
+                <p>Offer period: Till Sept 30, 2021</p>
+                <p>COUPON CODE: <mark>SMNG22.5</</mark></p>
+            </div>
+        </div>
+        <div class="card bg-light">
+            <div class="card-body" style="background-color:#f0f8ff;">
+                <p> </p>
+                <h5 class="card-title">Luxury Shopping - 10% cashback offer</h5>
+                <p class="card-text">Luxury Shopping Festival - 10% cashback offer Pay using CDB Bank Credit Card.</p>
+                <p>Offer period: Till Aug 31, 2021</p>
+                <p>COUPON CODE: <mark>LUX10</mark></p>
+
+            </div>
+        </div>
+        <div class="card bg-light">
+            <div class="card-body" style="background-color:#fff0f5;">
+                <p> </p>
+                <h5 class="card-title">MediBuddy Offer – Get MediBuddy iGold Membership on paying via CDB Bank</h5>
+                <p class="card-text">Get MediBuddy iGold Membership Pay using CDB Bank Internet Banking</p>
+                <p>Offer period: Till Aug 22, 2021</p>
+                <p>COUPON CODE: <mark>MDBDYG</mark></p>
+            </div>
+        </div>
+        <div class="card bg-light">
+            <div class="card-body" style="background-color:#f8f8ff;">
+                <p> </p>
+                <h5 class="card-title">Swiggy Offer - Win extra Supr credits using Net Banking</h5>
+                <p class="card-text">Swiggy Offer - Win extra Supr credits. Pay using CDB Bank Net Banking. Avail the offer.</p>
+                <a>Offer period: Till Sept 30, 2021</a>
+                <p> </p>
+                <p>COUPON CODE: <mark>SWIGGY</mark></p>
+            </div>
+        </div>
+    </div>
+
+</section>

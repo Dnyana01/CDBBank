@@ -1,0 +1,115 @@
+﻿@using Microsoft.AspNetCore.Http;
+@{
+    ViewData["Title"] = "Services";
+    //Layout = "~/Views/Shared/_LayoutDashBoard.cshtml";
+}
+
+@{
+    if (Context.Session.GetInt32("UserId") == null)
+        Layout = "~/Views/Shared/_Layout.cshtml";
+    else
+        Layout = "~/Views/Shared/_LayoutDashBoard.cshtml";
+
+}
+
+<head>
+    <style>
+        body {
+            position: relative;
+        }
+
+        #pay {
+           /* padding-top: 50px;*/
+            height: 500px;
+           
+           
+        }
+
+        #save {
+            padding-top: 50px;
+            height: 500px;
+          
+          
+        }
+
+        #insure {
+            padding-top: 50px;
+            height: 500px;
+           
+            /*background-color: #ff9800;*/
+        }
+
+    </style>
+</head>
+<body data-spy="scroll" data-target=".navbar" data-offset="50">
+
+    <!--Pay-->
+    <div id="pay" class="container-fluid">
+        <div class="card" style="width: 48rem; height:28rem;">
+            <img class="card-img-top" style="width: 48rem; height: 300px;"  src="/images/paybills.jpg" alt="Pay image cap">
+            <div class="card-body">
+                <h5 class="card-title">Pay</h5>
+            </div>
+
+            <div class="card-body">
+                <p class="card-text fs-ms mb-0">
+                    Have you done late Payments? Take care of Bills and Payments with just few clicks.
+                </p>
+                <span>
+                    <a class="btn btn-primary" href="~/Users/BankTransferNeft" type="button">Bank Transfer</a>
+                    <a class="btn btn-primary" href="~/Users/MobileRecharge" type="button">Mobile Recharge</a>
+                    <a class="btn btn-primary" href="~/Users/PayElectricityBill" type="button">Electric Bill</a>
+                </span>
+            </div>
+        </div>
+    </div>
+
+    <!--Save-->
+    <div id="save" class="container-fluid">
+        <div class="card" style="width: 48rem;">
+            <img class="card-img-top" style="width: 48rem; height: 300px;" src="/images/plant.jfif" alt="Save image cap">
+            <div class="card-body">
+                <h5 class="card-title">Save</h5>
+              
+            </div>
+
+            <div class="card-body">
+                <p class="card-text fs-ms mb-0">
+                    We help you build your money plant, build your future!
+                </p>
+                <span>
+                    <a class="btn btn-primary" href="~/RDs/Create" type="button">RD</a>
+                    <a class="btn btn-primary" href="~/FDs/Create" type="button">FD</a>
+                </span>
+
+            </div>
+        </div>
+    </div>
+
+    <!--Insure-->
+    <div id="save" class="container-fluid">
+        <div class="card" style="width: 48rem;">
+            <img class="card-img-top" style="width: 48rem; height: 300px;"  src="/images/piggy.jfif" alt="Insure image cap">
+            <div class="card-body">
+                <h5 class="card-title">Insure</h5>
+                
+            </div>
+
+            <div class="card-body">
+                <p class="card-text fs-ms mb-0">
+                    Insure your tomorrow by Insuring today. Let's Get Started...
+                </p>
+                <span>
+                    <a class="btn btn-primary" href="#" type="button">Health</a>
+                    <a class="btn btn-primary" href="#" type="button">Travel</a>
+                </span>
+
+            </div>
+        </div>
+    </div>
+    <br />
+    <br />
+
+</body>
+
+

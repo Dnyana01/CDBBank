@@ -1,0 +1,65 @@
+﻿@model CDBBank.Models.BankUser
+
+@{
+    ViewData["Title"] = "Settings";
+    Layout = "~/Views/Shared/_LayoutDashBoard.cshtml";
+}
+
+<style>
+    
+    .card{
+        width:500px;
+        margin:100px;
+    }
+
+</style>
+
+
+   <!--Change Password-->
+<div class="row">
+    <h2>Change Password</h2>
+    <div class="card bg-opaque-white">
+        <div class="card-body bg-white">
+            <form asp-action="ChangePassword" class="row g-2 g-lg-3">
+
+                <div class="col-md-12">
+                    <label class="form-label">Current Password</label>
+                    <input type="password" class="form-control" name="password">
+                </div>
+                <div class="col-md-12">
+                    <label class="form-label">New Password</label>
+                    <input type="password" class="form-control" name="newPassword">
+                </div>
+                <div class="col-md-12">
+                    <label class="form-label">Repeat New Password</label>
+                    <input type="password" class="form-control" name="confirmNewPassword">
+                </div>
+                <div class="col-md-12">
+                    <input type="submit" value="Change Password" class="btn btn-success btn-block mb-4">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!--Delete-->
+
+
+<div class="row">
+    <h2>Delete Account</h2>
+    <div class="card bg-opaque-white">
+        <div class="card-body bg-white">
+            <form asp-action="DeleteAccount" class="row g-2 g-lg-3">
+                <div class="col-md-12">
+                    <label class="form-label">Enter Password</label>
+                    <input type="password" class="form-control" name="password">
+                </div>
+                <div class="col-md-12">
+                    <input type="submit" value="Delete Account" class="btn btn-danger btn-block mb-4">
+                    <small class="text-muted"><br />Are you sure you want to delete this? <br />**Please note that you will not be able to roll back your acocunt data.</small>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+       

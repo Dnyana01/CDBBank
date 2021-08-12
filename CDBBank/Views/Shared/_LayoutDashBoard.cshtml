@@ -1,0 +1,84 @@
+﻿@using Microsoft.AspNetCore.Http; 
+
+<!DOCTYPE html>
+
+<html>
+
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Dashboard</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+
+    <!--Sidebar Menu-->
+    <input type="checkbox" id="nav-toggle">
+    <div class="sidebar">
+        <div class="sidebar-brand">
+            <h2><span class="lab la-accusoft"></span>CDB</h2>
+        </div>
+
+        <div class="sidebar-menu">
+            <ul>
+                <li><a href="~/Users/Dashboard" class="active"><span class=""></span><span>DashBoard</span></a></li>
+                <li><a href="~/Users/Accounts"><span class=""></span><span>Accounts</span></a></li>
+                <li><a href="~/Users/Services"><span class=""></span><span>Services</span></a></li>
+
+                <li><a href="~/Users/TransactionIndex"><span class=""></span><span>Transactions</span></a></li>
+                <li><a href="~/Users/Offers"><span class=""></span><span>Offers</span></a></li>
+                <li><a href="~/Users/Settings"><span class=""></span><span>Settings</span></a></li>
+                <li><a href="~/Users/Logout"><span class=""></span><span>Logout</span></a></li>
+            </ul>
+
+        </div>
+    </div>
+    <!--End Sidebar Menu-->
+
+    <!--Body Main Content-->
+    <div class="main-content">
+        <header>
+            <h2>
+                <label for="nav-toggle"><span class="las la-bars"></span></label>
+
+                DashBoard
+            </h2>
+
+            <div class="search-wrapper">
+                <span class="las la-search"></span>
+                <input type="search" placeholder="Search here" />
+            </div>
+
+            <div class="user-wrapper">
+                <img src="/images/user.png" style="width:40px; height:40px;" alt="">
+                <div>
+                    @{
+                        string acctype = Context.Session.GetString("AccType");
+                        string name = Context.Session.GetString("FirstName");
+
+                        
+                        <h4>Hi, @name!</h4>
+                        <small>@acctype Account</small>
+                    }
+
+                </div>
+            </div>
+
+        </header>
+
+
+        <div>
+            <main>
+                @RenderBody()
+            </main>
+          
+        </div>
+
+    </div>
+    <!--End Body Main Content-->
+</body>
+</html>

@@ -1,0 +1,119 @@
+﻿@model IEnumerable<CDBBank.Models.Transaction>
+@{
+    Layout = "~/Views/Shared/_LayoutDashBoard.cshtml";
+}
+
+<main>
+    <div class="quick-access">
+        <div class="card-single">
+            <div> <h2>Pay Bills</h2><span><a href="~/Users/Services"> Pay Now</a></span>  </div>
+            <div><span class="las la-users"></span></div>
+        </div>
+        <div class="card-single">
+            <div> <h2>Fixed Deposit</h2><span><a href="~/FDs/Create"> Book Now</a></span>  </div>
+            <div><span class="las la-users"></span></div>
+        </div>
+        <div class="card-single">
+            <div> <h2>Money Transfer</h2><span><a href="~/Users/BankTransferNeft"> Send Now</a></span>  </div>
+            <div><span class="las la-users"></span></div>
+        </div>
+        <div class="card-single">
+            <div> <h2>Interest Rates</h2><span><a href="#"> Send Now</a></span>  </div>
+            <div><span class="las la-users"></span></div>
+        </div>
+    </div>
+
+    <div class="recent-grid">
+        <div class="projects">
+            <div class="card">
+                <div class="card-header">
+                    <h3>Recent Transactions</h3>
+
+                    <button><a href="~/Users/TransactionIndex"> See All</a> <span class="las la-arrow-right"></span></button>
+                </div>
+                <div class="card-body">
+                    <table width="100%">
+
+                        <thead>
+                            <tr>
+                                <td>Withdrawal</td>
+                                <td>Deposit</td>
+                                <td>Transaction Date</td>
+                                <td>Remarks</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                            <tr>
+                                <td>@item.Withdrawal</td>
+                                <td>@item.Deposit</td>
+                                <td>@item.TransactionDate</td>
+                                <td>@item.Narration</td>
+                                <td><span class="status"></span></td>
+                            </tr>
+                            }
+                        </tbody>
+                        </table>
+                    </div>
+            </div>
+        </div>
+
+        <div class="offers">
+            <div class="card">
+                <div class="card-header">
+                    <h3>Offers For You</h3>
+
+                    <button><a href="#"> See All</a> <span class="las la-arrow-right"></span></button>
+                </div>
+                <div class="card-body">
+                    <div class="offer">
+                        <div class="info">
+                            <img src="~/images/bb.PNG" style="width:80px; height:40px;" alt="Apple">
+
+                            <div>
+                                <h4>Big Basket</h4>
+                                <small>Exciting Discounts</small>
+                            </div>
+                        </div>
+                        <div class="contact">
+                            <button type="button">See</button>
+                        </div>
+                    </div>
+
+
+                    <div class="offer">
+                        <div class="info">
+                            <img src="~/images/swigs.PNG" style="width:80px; height:40px;" alt="Apple">
+
+                            <div>
+                                <h4>Swiggy</h4>
+                                <small>Exciting Discounts</small>
+                            </div>
+                        </div>
+                        <div class="contact">
+                            <button type="button">See</button>
+                        </div>
+                    </div>
+
+                    <div class="offer">
+                        <div class="info">
+                            <img src="~/images/licious.PNG" style="width:80px; height:40px;" alt="Apple">
+
+                            <div>
+                                <h4>Licious</h4>
+                                <small>Exciting Discounts</small>
+                            </div>
+                        </div>
+                        <div class="contact">
+                            <button type="button">See</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</main>
